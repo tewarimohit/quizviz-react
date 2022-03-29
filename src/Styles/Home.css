@@ -1,0 +1,100 @@
+@import url("http://fonts.cdnfonts.com/css/harry-potter");
+@import url("http://fonts.googleapis.com/css?family=Libre+Baskerville");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	--bg-color: #0a0b0f;
+	--text-color: #fff;
+}
+a {
+	text-decoration: none;
+	color: var(--text-color);
+}
+.hp-font {
+	font-family: "Harry Potter", sans-serif;
+	color: #8b4513;
+}
+.lord-font {
+	font-family: "Libre Baskerville", serif;
+	margin-bottom: 5px;
+}
+
+html,
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-family: "Lato", "Arial", sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 6px;
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 40px;
+	word-spacing: 2px;
+}
+h4 {
+	text-align: center;
+	margin-bottom: 8px;
+	word-spacing: 2px;
+	text-align: justify;
+	font-weight: 400;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.rules {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.card-section {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 50px 0;
+}
+
+.card-wrapper {
+	max-width: 25%;
+	height: 400px;
+	background-color: #2c3637;
+	border-radius: 20px;
+}
+.card-wrapper:hover {
+	cursor: pointer;
+}
+
+.card-wrapper img {
+	width: 100%;
+	height: auto;
+	border-radius: 20px;
+}
+
+.text-wrapper {
+	padding: 0.5em;
+}
+
+.text-wrapper p {
+	color: #c4c4c4;
+}
