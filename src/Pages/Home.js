@@ -1,15 +1,11 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
 import "../Styles/Home.css";
 import { Link } from "react-router-dom";
 
-const Home = ({ items,setSelectedQuiz }) => {
-
-	const navigate= useNavigate();
-	const onQuizSelect=(questions)=>{
+const Home = ({ items, setSelectedQuiz }) => {
+	const onQuizSelect = questions => {
 		setSelectedQuiz(questions);
-		navigate('/questions');
-	}
+	};
 	return (
 		<div>
 			<header>
@@ -34,19 +30,18 @@ const Home = ({ items,setSelectedQuiz }) => {
 			<section className="card-section container">
 				{items.map(each => (
 					<div className="card-wrapper" title="Harry Potter">
-						
-							<div className="card-content" onClick={()=>onQuizSelect(each.questions)}>
+						<div
+							className="card-content"
+							onClick={() => onQuizSelect(each.questions)}
+						>
+							<Link to={`/questions/${each.categoryName}`}>
 								<img src={each.image} alt="buffer-img" />
 								<div className="text-wrapper">
-									<h3 className={each.font}>
-										{each.categoryName}
-									</h3>
-									<p className={each.font}>
-										{each.bodyText}
-									</p>
+									<h3 className={each.font}>{each.categoryName}</h3>
+									<p className={each.font}>{each.bodyText}</p>
 								</div>
-							</div>
-						
+							</Link>
+						</div>
 					</div>
 				))}
 			</section>

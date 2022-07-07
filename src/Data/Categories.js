@@ -1,7 +1,7 @@
 export const Categories = [
 	{
 		id: 1,
-		font:'hp-font',
+		font: "hp-font",
 		image: "../Assets/hp.jpg",
 		categoryName: "Harry Potter",
 		bodyText:
@@ -14,7 +14,7 @@ export const Categories = [
 				quote:
 					'"It is our choices, that show what we truly are, far more than our abilities"',
 				question: "What was the name of Harry Potter's pet ?",
-				options: [{ a: "Dobby", b: "Hedwig", c: "Scabbers" }],
+				options: ["Dobby", "Hedwig", "Scabbers"],
 				isCorrect: true,
 				points: 5,
 				correctAns: "Hedwig",
@@ -25,9 +25,7 @@ export const Categories = [
 				quote:
 					'"If you want to know what a man’s like, take a good look at how he treats his inferiors, not his equals"',
 				question: "Who was the Godfather of Harry Potter ?",
-				options: [
-					{ a: "Prof. Severus Snape", b: "James Potter", c: "Sirius Black" },
-				],
+				options: ["Prof. Severus Snape", "James Potter", "Sirius Black"],
 				correctAns: "Sirius Black",
 				isCorrect: true,
 				points: 5,
@@ -39,9 +37,7 @@ export const Categories = [
 					'"Things we lose have a way of coming back to us in the end, if not always in the way we expect"',
 				question:
 					"Which one of the following was not the Harry Potter's best friend ?",
-				options: [
-					{ a: "Ronald Weasley", b: "Draco Malfoy", c: "Hermione Granger" },
-				],
+				options: ["Ronald Weasley", "Draco Malfoy", "Hermione Granger"],
 				correctAns: "Draco Malfoy",
 				isCorrect: true,
 				points: 5,
@@ -52,9 +48,7 @@ export const Categories = [
 				quote:
 					'"We are only as strong as we are united, as weak as we are divided."',
 				question: "Who gave Harry the cake on his Eleventh birthday ?",
-				options: [
-					  "Hermione Granger",  "Ronald Weasley",  "Rubeus Hagrid" 
-				],
+				options: ["Hermione Granger", "Ronald Weasley", "Rubeus Hagrid"],
 				correctAns: "Rubeus Hagrid",
 				isCorrect: true,
 				points: 5,
@@ -65,7 +59,7 @@ export const Categories = [
 				quote:
 					'"Differences of habit and language are nothing at all if our aims are identical and our hearts are open"',
 				question: "What was the name of Harry Potter's cousin ?",
-				options: [{ a: "Fred", b: "Dudley", c: "George" }],
+				options: ["Fred", "Dudley", "George"],
 				correctAns: "Dudley",
 				isCorrect: true,
 				points: 5,
@@ -75,7 +69,7 @@ export const Categories = [
 	{
 		id: 2,
 		image: "../Assets/precious.jpg",
-		font:'lord-font',
+		font: "lord-font",
 		categoryName: "Lord of the Rings",
 		bodyText: "	Not All Those who Wander are Lost. -Bilbo Baggins.",
 	},

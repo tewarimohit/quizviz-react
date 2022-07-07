@@ -7,14 +7,21 @@ import { Categories } from "./Data/Categories";
 import { useState } from "react";
 
 const App = () => {
+	const [selectedQuiz, setSelectedQuiz] = useState(null);
 
-	const [selectedQuiz, setSelectedQuiz]=useState(null);
-	
 	return (
 		<div className="App">
 			<Routes>
-				<Route path="/" element={<Home items={Categories} setSelectedQuiz={setSelectedQuiz}/>} />
-				<Route path="/questions" element={<Questions selectedQuiz={selectedQuiz} />} />
+				<Route
+					path="/"
+					element={
+						<Home items={Categories} setSelectedQuiz={setSelectedQuiz} />
+					}
+				/>
+				<Route
+					path="/questions/:id"
+					element={<Questions selectedQuiz={selectedQuiz} />}
+				/>
 				<Route path="/score" element={<Score />} />
 				<Route path="/login" element={<Login />} />
 			</Routes>
