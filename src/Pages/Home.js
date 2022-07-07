@@ -1,8 +1,15 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import "../Styles/Home.css";
 import { Link } from "react-router-dom";
 
-const Home = ({ items }) => {
+const Home = ({ items,setSelectedQuiz }) => {
+
+	const navigate= useNavigate();
+	const onQuizSelect=(questions)=>{
+		setSelectedQuiz(questions);
+		navigate('/questions');
+	}
 	return (
 		<div>
 			<header>
@@ -27,19 +34,19 @@ const Home = ({ items }) => {
 			<section className="card-section container">
 				{items.map(each => (
 					<div className="card-wrapper" title="Harry Potter">
-						<Link to={each.id===1?`/questionshp`:`/questions`}>
-							<div className="card-content">
+						
+							<div className="card-content" onClick={()=>onQuizSelect(each.questions)}>
 								<img src={each.image} alt="buffer-img" />
 								<div className="text-wrapper">
-									<h3 className={each.id === 1 ? "hp-font" : "lord-font"}>
-										{each.category}
+									<h3 className={each.font}>
+										{each.categoryName}
 									</h3>
-									<p className={each.id === 1 ? "hp-font" : "lord-font"}>
+									<p className={each.font}>
 										{each.bodyText}
 									</p>
 								</div>
 							</div>
-						</Link>
+						
 					</div>
 				))}
 			</section>

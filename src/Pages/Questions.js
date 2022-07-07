@@ -3,25 +3,26 @@ import { Link } from "react-router-dom";
 import "../Styles/Questions.css";
 import "../Data/Categories";
 
-const Questions = ({ items }) => {
-	console.log(items);
+const options=['a) how','b) are' ,'c) you'];
+
+const Questions = ({selectedQuiz}) => {
+	console.log(selectedQuiz);
 	
 	return (
-		items.forEach((element)=>
 		<div>
 			<header>
 				<div className="header">
-						<h2 className="hp-font">{element.category}</h2>
+						<h2 className="hp-font">Category Name</h2>
 				
 					<Link to="/">
 						<button className="header-btn">HOME</button>
 					</Link>
 
-					{[0].id === items[0].category_id && (
+					
 						<h4 className="hp-font text-color margin-bottom">
-							{items[0].quote}
+							Quote
 						</h4>
-					)}
+					
 
 					<div className="score-container">
 						<h4>Question: 1/5</h4>
@@ -32,28 +33,17 @@ const Questions = ({ items }) => {
 
 			<section className="question-section container">
 				<div className="question-part">
-					{[0].id === items[0].category_id && (
-						<h4 className="hp-font">{items[0].question}</h4>
-					)}
-					{[0].id === items[0].category_id && (
-						<button type="button" className="btns btn-grey" name="button">
-							{items[0].options[0].a}
-						</button>
-					)}
-					{[0].id === items[0].category_id && (
-						<button
-							type="button"
-							className="btns btn-grey btn-green"
-							name="button"
-						>
-							{items[0].options[0].b}
-						</button>
-					)}
-					{[0].id === items[0].category_id && (
-						<button type="button" className="btns btn-grey" name="button">
-							{items[0].options[0].c}
-						</button>
-					)}
+				
+						<h4 className="hp-font">question</h4>
+					
+					
+						{options.map((each)=>(<button type="button" className="btns btn-grey" name="button">
+							{each}
+							</button>))}
+					
+					
+					
+					
 				</div>
 			</section>
 
@@ -67,7 +57,8 @@ const Questions = ({ items }) => {
 					</a>
 				</div>
 			</div>
-		</div>)
+		</div>
+		
 	);
 };
 
