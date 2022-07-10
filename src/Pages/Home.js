@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Styles/Home.css";
 import { Link } from "react-router-dom";
 
-const Home = ({ items, setSelectedQuiz }) => {
+const Home = ({ items, onCardClick }) => {
 	const onQuizSelect = questions => {
-		setSelectedQuiz(questions);
+		onCardClick(questions);
 	};
+
+
 	return (
 		<div>
 			<header>
@@ -32,9 +34,9 @@ const Home = ({ items, setSelectedQuiz }) => {
 					<div className="card-wrapper" title="Harry Potter">
 						<div
 							className="card-content"
-							onClick={() => onQuizSelect(each.questions)}
+							// onClick={() => onQuizSelect(each.questions)}
 						>
-							<Link to={`/questions/${each.categoryName}`}>
+							<Link to={`/questions/${each.id}`}>
 								<img src={each.image} alt="buffer-img" />
 								<div className="text-wrapper">
 									<h3 className={each.font}>{each.categoryName}</h3>

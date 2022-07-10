@@ -1,6 +1,6 @@
 export const Categories = [
 	{
-		id: 1,
+		id: '1',
 		font: "hp-font",
 		image: "../Assets/hp.jpg",
 		categoryName: "Harry Potter",
@@ -67,7 +67,7 @@ export const Categories = [
 		],
 	},
 	{
-		id: 2,
+		id: '2',
 		image: "../Assets/precious.jpg",
 		font: "lord-font",
 		categoryName: "Lord of the Rings",

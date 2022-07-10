@@ -7,7 +7,15 @@ import { Categories } from "./Data/Categories";
 import { useState } from "react";
 
 const App = () => {
-	const [selectedQuiz, setSelectedQuiz] = useState(null);
+	const [question, setQuestion] = useState('');
+
+	const SelectedQuizHandler = (selectedQuiz) => {
+		const questions = [
+			...selectedQuiz
+		];
+		setQuestion(questions);
+	};
+	console.log(question, 'qqqqqqqqqq');
 
 	return (
 		<div className="App">
@@ -15,13 +23,13 @@ const App = () => {
 				<Route
 					path="/"
 					element={
-						<Home items={Categories} setSelectedQuiz={setSelectedQuiz} />
+						<Home items={Categories} /* onCardClick={SelectedQuizHandler} */ />
 					}
 				/>
 				<Route
 					path="/questions/:id"
-					element={<Questions selectedQuiz={selectedQuiz} />}
-				/>
+					element={<Questions questionArray={Categories} />}
+				/>s
 				<Route path="/score" element={<Score />} />
 				<Route path="/login" element={<Login />} />
 			</Routes>
