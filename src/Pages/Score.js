@@ -13,11 +13,12 @@ const Score = ({ questionArray }) => {
 		setFinalScore(JSON.parse(localStorage.getItem("score")));
 		setUserSelected(JSON.parse(localStorage.getItem("selectedOptions")) || []);
 	}, []);
+	console.log();
 	return (
 		<div>
 			<header>
 				<div className="header">
-					<h2 className={paramId === 1 ? "hp-font" : "lord-font"}>
+					<h2 className={paramId === "1" ? "hp-font" : "lord-font"}>
 						{questionObject.categoryName}
 					</h2>
 					<Link to="/">
@@ -31,7 +32,7 @@ const Score = ({ questionArray }) => {
 			<section className="question-section container">
 				{questions.map((each, i) => (
 					<div key={i} className="question-part">
-						<h4 className={paramId === 1 ? "hp-font" : "lord-font"}>
+						<h4 className={paramId === "1" ? "hp-font" : "lord-font"}>
 							{each.question}
 						</h4>
 						{each.options.map((el, ind) => (

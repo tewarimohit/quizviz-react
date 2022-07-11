@@ -39,7 +39,7 @@ const Questions = ({ questionArray }) => {
 		<div>
 			<header>
 				<div className="header">
-					<h2 className={paramId === 1 ? "hp-font" : "lord-font"}>
+					<h2 className={paramId === "1" ? "hp-font" : "lord-font"}>
 						{questions[index].category}
 					</h2>
 					<Link to="/">
@@ -47,7 +47,7 @@ const Questions = ({ questionArray }) => {
 					</Link>
 					<h4
 						className={`text-color margin-bottom ${
-							paramId === 1 ? "hp-font " : "lord-font"
+							paramId === "1" ? "hp-font " : "lord-font"
 						}`}
 					>
 						{questions[index].quote}
@@ -60,7 +60,7 @@ const Questions = ({ questionArray }) => {
 			</header>
 			<section className="question-section container">
 				<div className="question-part">
-					<h4 className={paramId === 1 ? "hp-font" : "lord-font"}>
+					<h4 className={paramId === "1" ? "hp-font" : "lord-font"}>
 						{questions[index].question}
 					</h4>
 					{questions[index].options.map((each, i) => (
