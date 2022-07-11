@@ -16,7 +16,7 @@ export const Categories = [
 				question: "What was the name of Harry Potter's pet ?",
 				options: ["Dobby", "Hedwig", "Scabbers"],
 				isCorrect: true,
-				points: 5,
+				points: 10,
 				correctAns: "Hedwig",
 			},
 			{
@@ -28,7 +28,7 @@ export const Categories = [
 				options: ["Prof. Severus Snape", "James Potter", "Sirius Black"],
 				correctAns: "Sirius Black",
 				isCorrect: true,
-				points: 5,
+				points: 10,
 			},
 			{
 				questionId: 3,
@@ -40,7 +40,7 @@ export const Categories = [
 				options: ["Ronald Weasley", "Draco Malfoy", "Hermione Granger"],
 				correctAns: "Draco Malfoy",
 				isCorrect: true,
-				points: 5,
+				points: 10,
 			},
 			{
 				questionId: 4,
@@ -51,7 +51,7 @@ export const Categories = [
 				options: ["Hermione Granger", "Ronald Weasley", "Rubeus Hagrid"],
 				correctAns: "Rubeus Hagrid",
 				isCorrect: true,
-				points: 5,
+				points: 10,
 			},
 			{
 				questionId: 5,
@@ -62,7 +62,7 @@ export const Categories = [
 				options: ["Fred", "Dudley", "George"],
 				correctAns: "Dudley",
 				isCorrect: true,
-				points: 5,
+				points: 10,
 			},
 		],
 	},

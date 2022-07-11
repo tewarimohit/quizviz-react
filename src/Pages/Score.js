@@ -1,90 +1,45 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import "../Styles/Score.css";
 
-const Score = () => {
+const Score = ({ questionArray }) => {
+const [finalScore,setFinalScore]=useState(0);
+const [userSelected,setUserSelected]=useState([])
+    const { id: paramId } = useParams();
+	const newQuiz = questionArray.filter((each) => each.id === paramId)
+    const [questionObject] = newQuiz;
+    const { questions } = questionObject;
+	useEffect(()=>{
+		 setFinalScore(JSON.parse(localStorage.getItem('score')))
+		 setUserSelected(JSON.parse(localStorage.getItem('selectedOptions'))||[])
+	},[])
 	return (
 		<div>
 			<header>
 				<div className="header">
-					<h2 className="hp-font">Harry Potter</h2>
+					<h2 className="hp-font">{questionObject.categoryName}</h2>
 					<Link to="/">
 						<button className="header-btn">HOME</button>
 					</Link>
 
-					<h4>Your Final Score: 10/50</h4>
+					<h4>Your Final Score: {finalScore}/50</h4>
 				</div>
 			</header>
-
+			
 			<section className="question-section container">
-				<div className="question-part">
-					<h4 className="hp-font">What was the name of Harry Potter's pet ?</h4>
-					<button type="button" className="btns btn-grey" name="button">
-						Dobby
-					</button>
-					<button type="button" className="btns btn-grey btn-green" name="button">
-						Hedwig
-					</button>
-					<button type="button" className="btns btn-grey" name="button">
-						Scabbers
-					</button>
+				{questions.map((each,i)=>(
+					<div key={i}className="question-part">
+					<h4 className="hp-font">{each.question}</h4>
+					{each.options.map((el,ind)=>(<button key={`button-key${ind}`} type="button" className={el===each.correctAns?`btns btn-green`:'btns btn-red'} name="button">
+						{el}
+					</button>))}
+					<h4>You Selected :- {userSelected[i]}</h4>
 				</div>
+				))
+				
+				}
 
-				<div className="question-part">
-					<h4 className="hp-font">Who was the Godfather of Harry Potter ?</h4>
-					<button type="button" className="btns btn-grey" name="button">
-						Prof. Severus Snape
-					</button>
-					<button type="button" className="btns btn-grey btn-red" name="button">
-						James Potter
-					</button>
-					<button type="button" className="btns btn-grey btn-green" name="button">
-						Sirius Black
-					</button>
-				</div>
-
-				<div className="question-part">
-					<h4 className="hp-font">
-						Which one of the following was not the Harry Potter's best friend ?
-					</h4>
-					<button type="button" className="btns btn-grey" name="button">
-						Ronald Weasley
-					</button>
-					<button type="button" className="btns btn-grey btn-green" name="button">
-						Draco Malfoy
-					</button>
-					<button type="button" className="btns btn-grey" name="button">
-						Hermione Granger
-					</button>
-				</div>
-
-				<div className="question-part">
-					<h4 className="hp-font">
-						Who gave Harry the cake on his Eleventh birthday ?
-					</h4>
-					<button type="button" className="btns btn-grey" name="button">
-						Hermione Granger
-					</button>
-					<button type="button" className="btns btn-grey" name="button">
-						Ronald Weasley
-					</button>
-					<button type="button" className="btns btn-grey btn-green" name="button">
-						Rubeus Hagrid
-					</button>
-				</div>
-
-				<div className="question-part">
-					<h4 className="hp-font">What was the name of Harry Potter's cousin ?</h4>
-					<button type="button" className="btns btn-grey btn-red" name="button">
-						Fred
-					</button>
-					<button type="button" className="btns btn-grey btn-green" name="button">
-						Dudley
-					</button>
-					<button type="button" className="btns btn-grey" name="button">
-						George
-					</button>
-				</div>
+				
 			</section>
 		</div>
 	);
