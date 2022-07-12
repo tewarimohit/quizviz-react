@@ -4,10 +4,8 @@ import Login from "./Pages/Login";
 import Questions from "./Pages/Questions";
 import Score from "./Pages/Score";
 import { Categories } from "./Data/Categories";
-import { useState } from "react";
 
 const App = () => {
-	const [selectedQuiz, setSelectedQuiz] = useState(null);
 
 	return (
 		<div className="App">
@@ -15,14 +13,14 @@ const App = () => {
 				<Route
 					path="/"
 					element={
-						<Home items={Categories} setSelectedQuiz={setSelectedQuiz} />
+						<Home items={Categories} />
 					}
 				/>
 				<Route
 					path="/questions/:id"
-					element={<Questions selectedQuiz={selectedQuiz} />}
-				/>
-				<Route path="/score" element={<Score />} />
+					element={<Questions questionArray={Categories} />}
+				/>s
+				<Route path="/score/:id" element={<Score questionArray={Categories}  />} />
 				<Route path="/login" element={<Login />} />
 			</Routes>
 		</div>
