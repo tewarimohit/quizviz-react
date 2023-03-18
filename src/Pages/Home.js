@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Styles/Home.css";
 import { Link } from "react-router-dom";
 
-const Home = ({ items, setSelectedQuiz }) => {
-	const onQuizSelect = questions => {
-		setSelectedQuiz(questions);
-	};
+const Home = ({ items }) => {
+
+const onCardClickHandler=()=>{
+	localStorage.removeItem("score");
+}
+
 	return (
 		<div>
 			<header>
@@ -28,13 +30,12 @@ const Home = ({ items, setSelectedQuiz }) => {
 			</header>
 
 			<section className="card-section container">
-				{items.map(each => (
-					<div className="card-wrapper" title="Harry Potter">
+				{items.map((each, index) => (
+					<div key={`key-${index}`} className="card-wrapper" title="Harry Potter">
 						<div
-							className="card-content"
-							onClick={() => onQuizSelect(each.questions)}
+							className="card-content" onClick={onCardClickHandler}
 						>
-							<Link to={`/questions/${each.categoryName}`}>
+							<Link to={`/questions/${each.id}`}>
 								<img src={each.image} alt="buffer-img" />
 								<div className="text-wrapper">
 									<h3 className={each.font}>{each.categoryName}</h3>
